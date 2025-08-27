@@ -261,6 +261,7 @@ pub fn buildLibSokol(b: *Build, options: LibSokolOptions) !*Build.Step.Compile {
         const link_egl = options.use_egl or options.use_wayland;
         if (link_system_libs) {
             mod.linkSystemLibrary("asound", .{});
+            mod.linkSystemLibrary("alsa", .{}); // FIXME: nixos uses `alsa` as package
             mod.linkSystemLibrary("GL", .{});
             if (options.use_x11) {
                 mod.linkSystemLibrary("X11", .{});
