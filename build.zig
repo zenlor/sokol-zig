@@ -266,6 +266,7 @@ pub fn buildLibSokol(b: *Build, options: LibSokolOptions) !*Build.Step.Compile {
             if (options.use_x11) {
                 mod.linkSystemLibrary("X11", .{});
                 mod.linkSystemLibrary("Xi", .{});
+                mod.linkSystemLibrary("Xext", .{});
                 mod.linkSystemLibrary("Xcursor", .{});
             }
             if (options.use_wayland) {
