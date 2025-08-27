@@ -268,6 +268,7 @@ pub fn buildLibSokol(b: *Build, options: LibSokolOptions) !*Build.Step.Compile {
                 mod.linkSystemLibrary("Xi", .{});
                 mod.linkSystemLibrary("Xext", .{});
                 mod.linkSystemLibrary("Xcursor", .{});
+                mod.linkSystemLibrary("Xfixes", .{}); // sokol-app also requires Xfixes!
             }
             if (options.use_wayland) {
                 mod.linkSystemLibrary("wayland-client", .{});
